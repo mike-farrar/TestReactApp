@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-export default function App() {
+function App() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => console.log(data);
   console.log(errors);
@@ -11,7 +11,7 @@ export default function App() {
       <input type="text" placeholder="First name" {...register("First name", {required: true, maxLength: 80})} />
       <input type="text" placeholder="Last name" {...register("Last name", {required: true, maxLength: 100})} />
       <input type="email" placeholder="Manager Email" {...register("Manager Email", {})} />
-      <input type="text" placeholder="Office Location" {...register("Office Location", {, max: 1, pattern: /^\S+@\S+$/i})} />
+      <input type="text" placeholder="Office Location" {...register("Office Location", {})} />
       <input type="tel" placeholder="Mobile number" {...register("Mobile number", {required: true, minLength: 6, maxLength: 12})} />
       <select {...register("Title", { required: true })}>
         <option value="Mr">Mr</option>
@@ -35,12 +35,12 @@ export default function App() {
       <input {...register} type="radio" value="it@blank.com" />
 
       <input {...register} type="radio" value="\\Server\share1" />
-      <input {...register} type="radio" value="\\sever.share2" />
+      <input {...register} type="radio" value="\\sever\share2" />
       <input {...register} type="radio" value="\\server\share3" />
 
-      <input {...register} type="radio" value="Team 1" />
+      <input {...register} type="radio" value="Team1" />
       <input {...register} type="radio" value="Team2" />
-      <input {...register} type="radio" value="Team 3" />
+      <input {...register} type="radio" value="Team3" />
 
       <input {...register} type="radio" value="DL1@blank.com" />
       <input {...register} type="radio" value="DL2@blank.com" />
@@ -54,3 +54,6 @@ export default function App() {
     </form>
   );
 }
+
+
+export default App;
